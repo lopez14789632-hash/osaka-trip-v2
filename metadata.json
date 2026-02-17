@@ -1,0 +1,7 @@
+{
+  "name": "大阪冒險 ",
+  "description": "超級可愛的吉伊卡哇風格大阪旅遊小幫手！包含動態行程表、打包清單與倒數計時。",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

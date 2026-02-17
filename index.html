@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>大阪冒險地圖 🐹🍭</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FFB7C5', // Chiikawa Pink
+                        secondary: '#89CFF0', // Hachiware Blue
+                        accent: '#FFFFA1', // Usagi Yellow
+                        background: '#FDFDF5', // Paper Texture
+                        navy: '#5D4037', // Coffee Brown
+                        sakura: '#FFD1DC',
+                    },
+                    fontFamily: {
+                        sans: ['"Zen Maru Gothic"', '"Kosugi Maru"', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            font-family: 'Zen Maru Gothic', 'Kosugi Maru', sans-serif !important;
+        }
+        body {
+            background-color: #FDFDF5;
+            color: #5D4037;
+            -webkit-tap-highlight-color: transparent;
+            background-image: 
+                radial-gradient(#5D4037 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            background-opacity: 0.05;
+        }
+        .hand-drawn-border {
+            border: 3px solid #5D4037;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+        .sticker-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(93, 64, 55, 0.2);
+        }
+        .rough-edge {
+            border: 3px solid #5D4037;
+            box-shadow: 3px 3px 0px 0px #5D4037;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FDFDF5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #5D4037;
+            border-radius: 10px;
+        }
+        input, button, select, textarea {
+            font-family: 'Zen Maru Gothic', 'Kosugi Maru', sans-serif !important;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.570.0",
+    "papaparse": "https://esm.sh/papaparse@^5.5.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+    "@google/generative-ai": "https://esm.sh/@google/generative-ai@^0.24.1",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.4"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
