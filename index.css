@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    font-family: 'Zen Maru Gothic', 'Kosugi Maru', sans-serif !important;
+  }
+  body {
+    @apply bg-background text-navy;
+    -webkit-tap-highlight-color: transparent;
+    background-image: radial-gradient(#5D4037 0.5px, transparent 0.5px);
+    background-size: 24px 24px;
+  }
+}
+
+@layer components {
+  .hand-drawn-border {
+    border: 3px solid #5D4037;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  }
+  .sticker-shadow {
+    box-shadow: 4px 4px 0px 0px rgba(93, 64, 55, 0.2);
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
