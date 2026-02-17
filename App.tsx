@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { getGoogleSheetData, normalizeDate, calculateTimestamp } from './utils/csvParser';
 import Home from './components/Home';
@@ -31,11 +30,8 @@ const App: React.FC = () => {
     const overridesRaw = localStorage.getItem('osaka_itinerary_overrides');
     const overrides = overridesRaw ? JSON.parse(overridesRaw) : {};
     
-    // Merge fetched with overrides
-    // Overrides is grouped by date: { "3/5": [items], ... }
     let finalItinerary = [...fetched.itinerary];
     
-    // If we have overrides, we replace the whole day's data
     Object.keys(overrides).forEach(date => {
       finalItinerary = finalItinerary.filter(item => item.Date !== date);
       finalItinerary = [...finalItinerary, ...overrides[date]];
@@ -58,12 +54,12 @@ const App: React.FC = () => {
     
     overrides[date] = newDayItems.map(item => ({
       ...item,
-      Date: date, // Ensure date matches
+      Date: date,
       _timestamp: calculateTimestamp(date, item.Time)
     }));
 
     localStorage.setItem('osaka_itinerary_overrides', JSON.stringify(overrides));
-    loadData(); // Re-trigger load to refresh state
+    loadData();
   };
 
   if (loading) {
@@ -78,7 +74,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#FFF9FB] font-sans pb-24 text-[#5D4037]">
+    <div className="min-h-screen bg-[#FFF9FB] font-sans pb-24 text-[#5D4037]" style={{ backgroundColor: '#FFF9FB', color: '#5D4037' }}>
       <main className="max-w-md mx-auto min-h-screen bg-white/50 shadow-2xl overflow-hidden relative border-x-4 border-navy/5">
         {activeTab === 'home' && <Home onSwitchTab={(tab: TabType) => setActiveTab(tab)} />}
         {activeTab === 'day' && (

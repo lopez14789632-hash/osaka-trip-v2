@@ -1,32 +1,66 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Standard CSS for Cute Osaka Theme - No @apply used */
 
-@layer base {
-  * {
-    font-family: 'Zen Maru Gothic', 'Kosugi Maru', sans-serif !important;
-  }
-  body {
-    @apply bg-background text-navy;
-    -webkit-tap-highlight-color: transparent;
-    background-image: radial-gradient(#5D4037 0.5px, transparent 0.5px);
-    background-size: 24px 24px;
-  }
+:root {
+  --primary: #FFB7C5;
+  --secondary: #89CFF0;
+  --accent: #FFFFA1;
+  --background: #FFF9FB;
+  --navy: #5D4037;
+  --sakura: #FFD1DC;
 }
 
-@layer components {
-  .hand-drawn-border {
-    border: 3px solid #5D4037;
-    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  }
-  .sticker-shadow {
-    box-shadow: 4px 4px 0px 0px rgba(93, 64, 55, 0.2);
-  }
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+body {
+  background-color: #FFF9FB !important;
+  color: #5D4037 !important;
+  font-family: 'Zen Maru Gothic', 'Kosugi Maru', sans-serif !important;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  background-image: radial-gradient(#5D4037 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+}
+
+.hand-drawn-border {
+  border: 3px solid #5D4037 !important;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px !important;
+}
+
+.sticker-shadow {
+  box-shadow: 4px 4px 0px 0px rgba(93, 64, 55, 0.2) !important;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Base button visibility fallback */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  transition: transform 0.1s ease;
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+/* Ensure background colors and text colors are explicitly defined for preview stability */
+.bg-primary { background-color: var(--primary) !important; }
+.bg-secondary { background-color: var(--secondary) !important; }
+.bg-accent { background-color: var(--accent) !important; }
+.bg-sakura { background-color: var(--sakura) !important; }
+.bg-white { background-color: #ffffff !important; }
+.text-navy { color: var(--navy) !important; }
+.border-navy { border-color: var(--navy) !important; }
+
+/* Layout Helpers */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
 }
